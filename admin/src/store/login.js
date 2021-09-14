@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 export const loginSlice = createSlice({
     name: 'login',
     initialState: {
-        show: false
+        show: false,
+        login:false
     },
     reducers: {
         changeShow(state, { payload }) {

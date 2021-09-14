@@ -2,7 +2,12 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { changeShow } from "../../store/login";
 import { Modal, Button } from "antd";
+import Head from "./head";
+import LeftNav from './left-nav'
+import Footer from "./footer";
+import Content from "./content";
 const Home = () => {
+  // @ts-ignore
   const { show } = useSelector((state) => state.login);
   const disaptch = useDispatch();
   const handleOk = () => {
@@ -14,7 +19,7 @@ const Home = () => {
   };
   return (
     <div>
-      <Button onClick={() => disaptch(changeShow(true))}>show</Button>
+      {/* <Button onClick={() => disaptch(changeShow(true))}>show</Button>
       {show ? (
         <Modal
           title="Basic Modal"
@@ -24,7 +29,11 @@ const Home = () => {
         >
           hello
         </Modal>
-      ) : null}
+      ) : null} */}
+      <Head />
+      <LeftNav />
+      <Content />
+      <Footer/>
     </div>
   );
 };
