@@ -2,11 +2,14 @@ $headerCls: head;
 .header-wrapper {
   width: 100%;
   background: #000;
+  height: 70px;
   .#{$headerCls} {
     width: 1200px;
+    height: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     &-logo {
       width: 15%;
       height: 50px;
@@ -38,8 +41,8 @@ $headerCls: head;
         position: absolute;
         width: 22px;
         height: 22px;
-        left: 260px;
-        top: 15px;
+        left: 255px;
+        top: 5px;
         background: url(../../../assets/img/topbar.png);
         background-position: -4px -103px;
       }
@@ -68,15 +71,44 @@ $headerCls: head;
       }
     }
     &-fun {
-      width: 15%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      position: relative;
+      .mask{
+        width: 100%;
+        height: 21px;
+      }
+      &:hover{
+        .head-fun-set{
+          display: block;
+        }
+      }
       &-img {
-        margin: 0 5px;
+        margin-top: 16px;
+        cursor: pointer;
       }
       &-status {
         color: #fff;
+        cursor: pointer;
+      }
+      &-set{
+        background-color: #fff;
+        box-shadow: 0 2px 5px 0 rgba($color: #000000, $alpha: .2);
+        border-radius: 4px;
+        text-align: center;
+        transition: all .5s;
+        position: absolute;
+        left: -23px;
+        top: 70px;
+        z-index: 99;
+        display: none;
+        div{
+          cursor: pointer;
+          width: 100px;
+          height: 40px;
+          line-height: 40px;
+          &:hover{
+            background-color: rgba($color: #ccc, $alpha: .5);
+          }
+        }
       }
     }
   }
